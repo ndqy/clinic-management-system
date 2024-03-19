@@ -45,7 +45,7 @@
 
 <!-- CONTACT -->
 ## Liên hệ
-Your Name - Đình Quý - ndqyp1@gmail.com
+Đình Quý - ndqyp1@gmail.com
 
 
 
