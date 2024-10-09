@@ -4,6 +4,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.ServletRequest;
 import net.htmlparser.jericho.*;
@@ -30,6 +32,16 @@ public class Utilities {
 		}
 		return value;
 	}
+	public static Boolean getBooleanParam(ServletRequest request, String name) {
+		Boolean value = false;
+		
+		String str_value = request.getParameter(name);
+		
+		if(str_value != null && !str_value.equalsIgnoreCase("")) {
+			value = true;
+		}
+		return value;
+	}
 	public static Float getFloatParam(ServletRequest request, String name) {
 		float value = 0;
 		
@@ -50,6 +62,18 @@ public class Utilities {
 		}
 		return value;
 	}
+	public static ArrayList<String> getArrayListParam(ServletRequest request, String name) {
+		String[] tmp =  request.getParameterValues(name);
+		ArrayList<String> list = null;
+		if(tmp != null) {
+			list = new ArrayList<String>();
+			for(String item: tmp) {
+				list.add(item);
+			}
+		}
+		return list;
+	}
+	
 	public static String encode(String str_unicode) {
 		return CharacterReference.encode(str_unicode);
 	}
@@ -91,15 +115,17 @@ public class Utilities {
 		return unicodeString;
 	}
 	public static void main(String[] args) {
-		String utf8String = "Tiếng việt";
-
-		// Mã hóa chuỗi UTF-8 thành mã Unicode
-		byte[] utf8Bytes = utf8String.getBytes(StandardCharsets.UTF_8);
-		String unicodeString = new String(utf8Bytes, StandardCharsets.UTF_8);
-
-		// In kết quả
-		System.out.println(unicodeString);
-		// In kết quả
-		System.out.println(utf8Bytes);
+//		String utf8String = "Tiếng việt";
+//
+//		// Mã hóa chuỗi UTF-8 thành mã Unicode
+//		byte[] utf8Bytes = utf8String.getBytes(StandardCharsets.UTF_8);
+//		String unicodeString = new String(utf8Bytes, StandardCharsets.UTF_8);
+//
+//		// In kết quả
+//		System.out.println(unicodeString);
+//		// In kết quả
+//		System.out.println(utf8Bytes);
+		Date date = new Date();
+		System.out.println("Date: "+ date);
 	}
 }

@@ -12,4 +12,10 @@ public class Utilities_text {
 		}
 		return false;
 	}
+	public static void main(String[] args) {
+		for(int i=1; i<60; i++) {
+			System.out.println("pre.setString("+i+", item.getCertificate_code());");
+			
+		}
+	}
 }

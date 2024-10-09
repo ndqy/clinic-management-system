@@ -133,9 +133,9 @@ public class Header extends HttpServlet {
 		  out.append("<header id=\"header\" class=\"header fixed-top d-flex align-items-center\">");
 
 		    out.append("<div class=\"d-flex align-items-center justify-content-between\">");
-		      out.append("<a href=\"/btls/view\" class=\"logo d-flex align-items-center\">");
+		      out.append("<a href=\"/btl/view\" class=\"logo d-flex align-items-center\">");
 		        out.append("<img src=\"/btl/adimgs/logo.png\" alt=\"\">");
-		        out.append("<span class=\"d-none d-lg-block\">BTLAdmin</span>");
+		        out.append("<span class=\"d-none d-lg-block\">Admin</span>");
 		      out.append("</a>");
 		      out.append("<i class=\"bi bi-list toggle-sidebar-btn\"></i>");
 		    out.append("</div><!-- End Logo -->");

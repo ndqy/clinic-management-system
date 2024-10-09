@@ -118,7 +118,7 @@ public class CustomerLibrary {
               tmp.append("<th class=\"text-center\" scope=\"col\">ID</th>");
               tmp.append("<th class=\"text-center\" scope=\"col\">Họ tên</th>");
               tmp.append("<th class=\"text-center\" scope=\"col\">Tên đăng nhập</th>");
-              tmp.append("<th class=\"text-center\" scope=\"col\">Hộp thư</th>");
+              //tmp.append("<th class=\"text-center\" scope=\"col\">Hộp thư</th>");
         	  tmp.append("<th class=\"text-center\" scope=\"col\">Điện thoại</th>");
         	  tmp.append("<th class=\"text-center\" scope=\"col\">Ngày cập nhật</th>");
         	  //tmp.append("<th style=\"display: none\"></th>");
@@ -136,7 +136,7 @@ public class CustomerLibrary {
 	            	tmp.append("<th scope=\"row\" class=\"text-center\">"+item.getCustomer_id()+"</th>");
 	                tmp.append("<td class=\"text-center\">"+Utilities.decode(item.getCustomer_fullname())+"</td>");
 	                tmp.append("<td class=\"text-center\">"+item.getCustomer_username()+"</td>");
-	                tmp.append("<td class=\"text-center\">"+item.getCustomer_email()+"</td>");
+	               // tmp.append("<td class=\"text-center\">"+item.getCustomer_email()+"</td>");
                 	tmp.append("<td class=\"text-center\">"+item.getCustomer_phone()+"</td>");
                 	tmp.append("<td class=\"text-center\">"+item.getCustomer_modified_date()+"</td>");
 	                if(cus.isCustomer_isactive()) {

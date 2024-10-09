@@ -8,9 +8,7 @@ import org.javatuples.Pair;
 import org.javatuples.Triplet;
 
 import jsoft.ConnectionPool;
-import jsoft.objects.CustomerObject;
 import jsoft.objects.LogObject;
-import jsoft.objects.ServiceObject;
 
 public class LogModel {
 	private Log l;

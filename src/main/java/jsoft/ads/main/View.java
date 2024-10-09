@@ -92,6 +92,47 @@ public class View extends HttpServlet {
         out.append("<div class=\"col-lg-8\">");
           out.append("<div class=\"row\">");
 
+
+	          //Vẽ biểu đồ báo cáo doanh thu
+	          out.append("<!-- Reports -->");
+	          out.append("<div class=\"col-12\">");
+	            out.append("<div class=\"card\">");
+	
+	              out.append("<div class=\"filter\">");
+	                out.append("<a class=\"icon\" href=\"#\" data-bs-toggle=\"dropdown\"><i class=\"bi bi-three-dots\"></i></a>");
+	                out.append("<ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\">");
+	                  out.append("<li class=\"dropdown-header text-start\">");
+	                    out.append("<h6>Filter</h6>");
+	                  out.append("</li>");
+	
+	                  out.append("<li><a class=\"dropdown-item\" href=\"#\">Today</a></li>");
+	                  out.append("<li><a class=\"dropdown-item\" href=\"#\">This Month</a></li>");
+	                  out.append("<li><a class=\"dropdown-item\" href=\"#\">This Year</a></li>");
+	                out.append("</ul>");
+	              out.append("</div>");
+	
+	              out.append("<div class=\"card-body\">");
+	                out.append("<h5 class=\"card-title\">Báo cáo doanh thu theo năm </h5>");/*<span>/Today</span>*/
+	
+	               CalendarObject item = new CalendarObject();
+	               //item.setCalendar_room_id(Integer.parseInt(Utilities_date.getDate().substring(5, 7)));
+	               item.setCalendar_create_date(Utilities_date.getDate().substring(5, 7));
+	               item.setCalendar_end_date(Utilities_date.getDate().substring(0, 4));
+	               
+	               CalendarControl cc = new CalendarControl(cp);
+	               if(cc==null) {
+	              	 getServletContext().setAttribute("CPool", cc.getCP());
+	               }
+	               Quintet<CalendarObject, Short, Byte, CALENDAR_GET_TYPE, String> infors = new Quintet<>(item, null, null, CALENDAR_GET_TYPE.ID, null);
+	              out.append(cc.viewStatisticalChart(infors));
+	               cc.releaseConnection();
+	               
+	              out.append("</div>");
+	
+	            out.append("</div>");
+	          out.append("</div><!-- End Reports -->");
+          
+          
             out.append("<!-- Sales Card -->");
             out.append("<div class=\"col-xxl-4 col-md-6\">");
               out.append("<div class=\"card info-card sales-card\">");
@@ -100,12 +141,12 @@ public class View extends HttpServlet {
                   out.append("<a class=\"icon\" href=\"#\" data-bs-toggle=\"dropdown\"><i class=\"bi bi-three-dots\"></i></a>");
                   out.append("<ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\">");
                     out.append("<li class=\"dropdown-header text-start\">");
-                      out.append("<h6>Filter</h6>");
+                      out.append("<h6>Bộ lọc</h6>");
                     out.append("</li>");
 
-                    out.append("<li><a class=\"dropdown-item\" href=\"#\">Today</a></li>");
-                    out.append("<li><a class=\"dropdown-item\" href=\"#\">This Month</a></li>");
-                    out.append("<li><a class=\"dropdown-item\" href=\"#\">This Year</a></li>");
+                    out.append("<li><a class=\"dropdown-item\" href=\"#\">Hôm nay</a></li>");
+                    out.append("<li><a class=\"dropdown-item\" href=\"#\">Tháng này</a></li>");
+                    out.append("<li><a class=\"dropdown-item\" href=\"#\">Năm nay</a></li>");
                   out.append("</ul>");
                 out.append("</div>");
 
@@ -200,44 +241,6 @@ public class View extends HttpServlet {
             out.append("</div><!-- End Customers Card -->");
 
             
-            //Vẽ biểu đồ báo cáo doanh thu
-            out.append("<!-- Reports -->");
-            out.append("<div class=\"col-12\">");
-              out.append("<div class=\"card\">");
-
-                out.append("<div class=\"filter\">");
-                  out.append("<a class=\"icon\" href=\"#\" data-bs-toggle=\"dropdown\"><i class=\"bi bi-three-dots\"></i></a>");
-                  out.append("<ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\">");
-                    out.append("<li class=\"dropdown-header text-start\">");
-                      out.append("<h6>Filter</h6>");
-                    out.append("</li>");
-
-                    out.append("<li><a class=\"dropdown-item\" href=\"#\">Today</a></li>");
-                    out.append("<li><a class=\"dropdown-item\" href=\"#\">This Month</a></li>");
-                    out.append("<li><a class=\"dropdown-item\" href=\"#\">This Year</a></li>");
-                  out.append("</ul>");
-                out.append("</div>");
-
-                out.append("<div class=\"card-body\">");
-                  out.append("<h5 class=\"card-title\">Báo cáo doanh thu theo năm </h5>");/*<span>/Today</span>*/
-
-                 CalendarObject item = new CalendarObject();
-                 //item.setCalendar_room_id(Integer.parseInt(Utilities_date.getDate().substring(5, 7)));
-                 item.setCalendar_create_date(Utilities_date.getDate().substring(5, 7));
-                 item.setCalendar_end_date(Utilities_date.getDate().substring(0, 4));
-                 
-                 CalendarControl cc = new CalendarControl(cp);
-                 if(cc==null) {
-                	 getServletContext().setAttribute("CPool", cc.getCP());
-                 }
-                 Quintet<CalendarObject, Short, Byte, CALENDAR_GET_TYPE, String> infors = new Quintet<>(item, null, null, CALENDAR_GET_TYPE.ID, null);
-                out.append(cc.viewStatisticalChart(infors));
-                 cc.releaseConnection();
-                 
-                out.append("</div>");
-
-              out.append("</div>");
-            out.append("</div><!-- End Reports -->");
             
             
           out.append("</div>");//row

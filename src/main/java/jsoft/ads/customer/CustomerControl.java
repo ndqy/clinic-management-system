@@ -6,11 +6,6 @@ import org.javatuples.Pair;
 import org.javatuples.Quartet;
 
 import jsoft.ConnectionPool;
-import jsoft.ads.calendar.CalendarModel;
-import jsoft.ads.user.USER_SORT_TYPE;
-import jsoft.ads.user.UserLibrary;
-import jsoft.objects.CalendarObject;
-import jsoft.objects.CustomerObject;
 import jsoft.objects.CustomerObject;
 
 public class CustomerControl {

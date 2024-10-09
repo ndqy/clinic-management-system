@@ -39,7 +39,7 @@ public class CalendarImpl extends BasicImpl implements Calendar{
 			pre.setInt(6, item.getCalendar_room_id());
 			pre.setString(7, item.getCalendar_notes());
 			pre.setInt(8, item.getCalendar_dentist_id());
-			
+			System.out.println(pre.toString());
 			return this.add(pre);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -238,7 +238,7 @@ public class CalendarImpl extends BasicImpl implements Calendar{
 				sql.append("");
 				sql.append("");
 				
-		
+		System.out.println(sql.toString());
 				
 		return this.getReLists(sql.toString());
 	}

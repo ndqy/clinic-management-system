@@ -1,15 +1,8 @@
 package jsoft.ads.calendar;
 
 import java.util.*;
-
 import org.javatuples.*;
-
-import com.mysql.fabric.xmlrpc.base.Array;
-
-import jsoft.ConnectionPool;
-import jsoft.ConnectionPoolImpl;
 import jsoft.ads.user.UserLibrary;
-import jsoft.library.Utilities;
 import jsoft.library.Utilities_date;
 import jsoft.objects.CalendarObject;
 

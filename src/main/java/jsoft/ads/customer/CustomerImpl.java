@@ -44,7 +44,7 @@ public class CustomerImpl extends BasicImpl implements Customer {
 	public boolean addCustomer(CustomerObject item) {
 		// TODO Auto-generated method stub
 		if(this.isExist(item)) {
-			return false;
+			this.editCustomer(item,CUSTOMER_EDIT_TYPE.GENERAL);
 		}
 		
 		StringBuilder sql = new StringBuilder();
@@ -55,7 +55,6 @@ public class CustomerImpl extends BasicImpl implements Customer {
 		sql.append("customer_isactive ) ");
 		sql.append("VALUES(?,?,?,?,?,?,'123456',1);");
 		
-		System.out.println(sql.toString());
 		try {
 			PreparedStatement pre = this.con.prepareStatement(sql.toString());
 			pre.setString(1, item.getCustomer_fullname());

@@ -15,7 +15,6 @@ public class ConnectionPoolImpl implements ConnectionPool{
 		this.url = "jdbc:MySQL://127.0.0.1:3306/btl?allowMultiQueries=true";
 		this.username = "root";
 		this.userpass = "0000";
-		
 		this.loadDriver();
 		//Khởi tạo bộ nhớ đối tượng lưu trữ
 		this.pool = new Stack<>();

@@ -2,8 +2,6 @@ package jsoft.ads.calendar;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.UIClientPropertyKey;
 
 import org.javatuples.Quintet;
 
@@ -20,8 +17,6 @@ import jsoft.ConnectionPool;
 import jsoft.ads.customer.CUSTOMER_EDIT_TYPE;
 import jsoft.ads.customer.CustomerControl;
 import jsoft.ads.service.ServiceControl;
-import jsoft.ads.user.UserControl;
-import jsoft.ads.user.UserLibrary;
 import jsoft.library.Utilities;
 import jsoft.library.Utilities_date;
 import jsoft.objects.CalendarObject;
@@ -69,12 +64,8 @@ public class CalenderList extends HttpServlet {
 		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
-		
-		
+			
 		ConnectionPool cp = (ConnectionPool) getServletContext().getAttribute("CPool");
-		
-
 
 		CalendarControl cc = new CalendarControl(cp);
 		if(cp == null) {
@@ -152,7 +143,7 @@ public class CalenderList extends HttpServlet {
 							out.append("</div>");
 							
 						out.append("<div class=\"col-md-3\">");
-							out.append("<button type=\"submit\" class=\"btn btn-primary btn-md\" >Xác nhận</button>");
+							out.append("<button type=\"submit\" class=\"btn btn-primary btn-md\"><i class=\"bi bi-check-square\"></i> Xác nhận</button>");
 						out.append("</div>");
 					out.append("</div>");
 				out.append("</form>");

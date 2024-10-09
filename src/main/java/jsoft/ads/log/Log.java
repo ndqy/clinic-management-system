@@ -3,13 +3,9 @@ package jsoft.ads.log;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import org.javatuples.Quartet;
 import org.javatuples.Triplet;
 
 import jsoft.ShareControl;
-import jsoft.ads.customer.CUSTOMER_EDIT_TYPE;
-import jsoft.ads.customer.CUSTOMER_SORT_TYPE;
-import jsoft.objects.CustomerObject;
 import jsoft.objects.LogObject;
 
 public interface Log extends ShareControl{
